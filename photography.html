@@ -1,0 +1,91 @@
+<!-- 
+    Web Development Project - software.html
+    Author: Adrian Thomas Capacite
+    Date: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Capacite</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/content-style.css">
+</head>
+<body>
+    <nav id="primary-nav">
+        <ul class="constrain-width">
+            <li id="nav-logo"><a href="index.html"><img src="assets/images/Logo/AC-White-x64.png" alt="Logo"></a></li>
+            <li class="nav-link"><a href="software.html">Software</a></li>
+            <li class="nav-link"><a href="photography.html">Photography</a></li>
+            <li class="nav-link"><a href="software-web-dev-project.html">Web Project</a></li>
+            <li class="nav-link"><a href="about.html">About</a></li>
+            <li class="nav-link"><a href="#">Contact</a></li>
+        </ul>
+        
+        <div class="nav-toggle" onclick="toggleNav()">
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="header-background header-carousel">
+        <div class="carousel">
+            <a class="carousel-button carousel-prev" onclick="carouselPrev(this)">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a class="carousel-button carousel-next" onclick="carouselNext(this)">
+            <i class="fas fa-chevron-right"></i>
+            </a>
+
+            <span class="carousel-position">0</span>
+
+            <img class="carousel-image" src="https://picsum.photos/400/300?random=6" alt="placeholder" loading="lazy">
+
+        </div>
+
+        <div class="carousel-thumbs">
+            <img src="https://picsum.photos/400/300?random=6" alt="placeholder" loading="lazy" onclick="carouselDisplay(this, 0)">
+            <img src="https://picsum.photos/400/300?random=7" alt="placeholder" loading="lazy" onclick="carouselDisplay(this, 1)">
+            <img src="https://picsum.photos/400/300?random=8" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 2)">
+            <img src="https://picsum.photos/400/300?random=9" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 3)">
+            <img src="https://picsum.photos/400/300?random=10" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 4)">
+        </div>
+    </div>
+    
+    <header class="viewport-height flex-center-top">
+        
+        <div id="header-logo">
+            <img src="assets/images/Logo/Adrian-white-x256.png" alt="logo">
+            <img src="assets/images/Logo/Capacite-white-x256.png" alt="logo">
+        </div>
+        <h1 class="margin-0">P h o t o g r a p h y</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="constrain-width">
+        <section>
+            <h1>My name is Adrian Capacite</h1>
+            <p>
+                I am a Computer Science student at Technological University Dublin
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto nulla, corrupti maiores voluptatum voluptas, aspernatur vero sunt eum voluptatibus asperiores cupiditate molestiae libero modi quam! Recusandae laudantium excepturi voluptas quam.
+            </p>
+        </section>
+
+        <section class="gallary-grid">
+
+        </section>
+    </main>
+    <!-- Main Content End -->
+
+    <footer class="constrain-width">
+        <p>Adrian Capacite &copy; 2021</p>
+    </footer>
+
+    <script src="assets/scripts/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/87e2e714ed.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!-- 
+    Web Development Project - index.html
+    Author: Adrian Thomas Capacite
+    Date: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrian Capacite</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/content-style.css">
+</head>
+<body>
+    <nav id="primary-nav">
+        <ul class="constrain-width">
+            <li id="nav-logo"><a href="index.html"><img src="assets/images/Logo/AC-White-x64.png" alt="Logo"></a></li>
+            <li class="nav-link"><a href="software.html">Software</a></li>
+            <li class="nav-link"><a href="photography.html">Photography</a></li>
+            <li class="nav-link"><a href="software-web-dev-project.html">Web Project</a></li>
+            <li class="nav-link"><a href="about.html">About</a></li>
+            <li class="nav-link"><a href="#">Contact</a></li>
+        </ul>
+        
+        <div class="nav-toggle" onclick="toggleNav()">
+            <div></div>
+        </div>
+    </nav>
+    
+    <img src="assets/images/background/adrian-sillhouette.jpg" alt="" class="header-background">
+    
+    <header class="viewport-height">
+        <div id="home-header-logo">
+            <img src="assets/images/Logo/Adrian-white-x256.png" alt="logo">
+            <img src="assets/images/Logo/Capacite-white-x256.png" alt="logo">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="constrain-width">
+        <section>
+            <h1>My name is Adrian Capacite</h1>
+            <p>
+                I am a Computer Science student at Technological University Dublin
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto nulla, corrupti maiores voluptatum voluptas, aspernatur vero sunt eum voluptatibus asperiores cupiditate molestiae libero modi quam! Recusandae laudantium excepturi voluptas quam.
+            </p>
+        </section>
+
+        <section>
+            <h2>Latest Articles</h2>
+
+            <div class="scrolling-cards">
+
+                <article class="card">
+                    <div>
+                        <a href="">
+                            <img src="https://picsum.photos/300/400?random=1" alt="" loading="lazy">
+                            <h3>Article 1</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus aspernatur porro, dicta, a officiis fugiat vitae corporis illum adipisci aliquid at consectetur asperiores totam doloribus? Officiis rem nam soluta unde.</p>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <a href="">
+                            <img src="https://picsum.photos/300/400?random=2" alt="" loading="lazy">
+                            <h3>Article 2</h3>
+                            <p>lorem</p>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <a href="">
+                            <img src="https://picsum.photos/300/400?random=3" alt="" loading="lazy">
+                            <h3>Article 3</h3>
+                            <p>lorem</p>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <a href="">
+                            <img src="https://picsum.photos/300/400?random=4" alt="" loading="lazy">
+                            <h3>Article 4</h3>
+                            <p>lorem</p>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <a href="">
+                            <img src="https://picsum.photos/300/400?random=5" alt="" loading="lazy">
+                            <h3>Article 5</h3>
+                            <p>lorem</p>
+                        </a>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+        <section>
+            <h2>Latest Photos</h2>
+            <div class="gallery-carousel">
+                <div class="carousel">
+                    <a class="carousel-button carousel-prev" onclick="carouselPrev(this)">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a class="carousel-button carousel-next" onclick="carouselNext(this)">
+                    <i class="fas fa-chevron-right"></i>
+                    </a>
+    
+                    <span class="carousel-position">0</span>
+    
+                    <img class="carousel-image" src="https://picsum.photos/400/300?random=6" alt="placeholder" loading="lazy">
+    
+                </div>
+    
+                <div class="carousel-thumbs">
+                    <img src="https://picsum.photos/400/300?random=6" alt="placeholder" loading="lazy" onclick="carouselDisplay(this, 0)">
+                    <img src="https://picsum.photos/400/300?random=7" alt="placeholder" loading="lazy" onclick="carouselDisplay(this, 1)">
+                    <img src="https://picsum.photos/400/300?random=8" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 2)">
+                    <img src="https://picsum.photos/400/300?random=9" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 3)">
+                    <img src="https://picsum.photos/400/300?random=10" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 4)">
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Main Content End -->
+
+    <footer class="constrain-width">
+        <p>Adrian Capacite &copy; 2021</p>
+    </footer>
+
+    <script src="assets/scripts/scripts.js"></script>
+
+    <!-- fontawesome.com script for icons -->
+    <script src="https://kit.fontawesome.com/87e2e714ed.js" crossorigin="anonymous"></script>
+</body>
+</html>
