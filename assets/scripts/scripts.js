@@ -1,3 +1,8 @@
+// Initialisation
+window.onload = function() {
+
+};
+
 // NAV FUNCTIONS
 // Toggle mobile nav
 function toggleNav() {
@@ -6,7 +11,7 @@ function toggleNav() {
 // Hide desktop nav on scroll down
 var lastScrollY = window.pageYOffset;
 window.onscroll = function() {
-    navElem = document.getElementById("primary-nav");
+    let navElem = document.getElementById("primary-nav");
 
     if (window.pageYOffset > lastScrollY) {
         navElem.classList.add("scroll-down");
@@ -17,92 +22,83 @@ window.onscroll = function() {
     lastScrollY = window.pageYOffset;
 }
 
-
-{{{{{{{{}}}}}}}}
-()()()()()()
 // END OF NAV FUNCTIONS
 
 // CAROUSEL FUNCTIONS
-/* 
-    Carousel must be in this structure:
-        <div class="gallery-carousel">
-            <div class="carousel">
-                <a class="carousel-button carousel-prev" onclick="carouselPrev(this)">
-                    <!-- left button icon -->
-                </a>
+function carouselInitAll() {
+    
+}
 
-                <span class="carousel-position">0</span>
+// Returns elements and values of the carousel
+function carouselGetProperties(elem) {
+    let wrapperElem = elem.parentElement.parentElement;
 
-                <img class="carousel-image" src="<!-- First image -->" alt="">
+    let posDataElem = wrapperElem.getElementsByClassName("carousel-pos-data")[0];
+    let posElem = wrapperElem.getElementsByClassName("carousel-pos")[0];
+    let imageMainElem = wrapperElem.getElementsByClassName("carousel-image")[0];
+    let imagesWrapperElem = wrapperElem.getElementsByClassName("carousel-images-thumbs")[0]
+    
+    // Gets the size of the list of images
+    let count = parseInt(imagesWrapperElem.childElementCount);
 
-                <a class="carousel-button carousel-next" onclick="carouselNext(this)">
-                    <!-- right button icon -->
-                </a>
-            </div>
-
-            <div class="carousel-thumbs">
-                <!-- Images -->
-            </div>
-        </div>
-*/
-// Previous image
+    return {
+        posDataElem,
+        posElem,
+        imageMainElem,
+        imagesWrapperElem,
+        count
+    };
+}
+// Moves to previous image in carousel
 function carouselPrev(elem) {
-    var carouselWrapper = elem.parentElement.parentElement;
-
-    var carouselPos = carouselWrapper.getElementsByClassName("carousel-position")[0];
-    var carouselImage = carouselWrapper.getElementsByClassName("carousel-image")[0];
-    var carouselThumbs = carouselWrapper.getElementsByClassName("carousel-thumbs")[0];
-
-    var carouselLength = carouselThumbs.childElementCount;
-
-
-    if (carouselPos.innerHTML > 0) {
-        carouselPos.innerHTML = carouselPos.innerHTML - 1;
+    let {posDataElem, count} = carouselGetProperties(elem);
+    
+    if (posDataElem.innerHTML > 0) {
+        posDataElem.innerHTML = parseInt(posDataElem.innerHTML) - 1;
     } else {
-        carouselPos.innerHTML = carouselLength-1;
+        posDataElem.innerHTML = count - 1;
     }
 
-    copyImageAttributes(carouselImage, carouselThumbs.getElementsByTagName("img")[carouselPos.innerHTML])
+    carouselUpdate(elem);
 }
-
-// Next image
+// Moves to next image in carousel
 function carouselNext(elem) {
-    var carouselWrapper = elem.parentElement.parentElement;
-
-    var carouselPos = carouselWrapper.getElementsByClassName("carousel-position")[0];
-    var carouselImage = carouselWrapper.getElementsByClassName("carousel-image")[0];
-    var carouselThumbs = carouselWrapper.getElementsByClassName("carousel-thumbs")[0];
+    let {posDataElem, count} = carouselGetProperties(elem);
     
-    var carouselLength = carouselThumbs.childElementCount;
-
-    if (carouselPos.innerHTML < carouselLength-1) {
-        carouselPos.innerHTML = carouselPos.innerHTML - (-1);
+    if (posDataElem.innerHTML < count - 1) {
+        posDataElem.innerHTML = parseInt(posDataElem.innerHTML) + 1;
     } else {
-        carouselPos.innerHTML = 0;
+        posDataElem.innerHTML = 0;
     }
 
-    copyImageAttributes(carouselImage, carouselThumbs.getElementsByTagName("img")[carouselPos.innerHTML])
+    carouselUpdate(elem);
+}
+// Sets to specified image in carousel
+function carouselSetTo(elem, pos) {
+    let {posDataElem} = carouselGetProperties(elem);
+    
+    posDataElem.innerHTML = pos
+
+    carouselUpdate(elem);
 }
 
-// Show clicked image 
-function carouselDisplay(elem, pos) {
-    var carouselWrapper = elem.parentElement.parentElement;
-
-    var carouselPos = carouselWrapper.getElementsByClassName("carousel-position")[0];
-    var carouselImage = carouselWrapper.getElementsByClassName("carousel-image")[0];
-    var carouselThumbs = carouselWrapper.getElementsByClassName("carousel-thumbs")[0];
+// Updates the carousel with the new position
+function carouselUpdate(elem) {
+    let {posDataElem, posElem, imageMainElem, imagesWrapperElem, count} = carouselGetProperties(elem)
     
-    
-    carouselPos.innerHTML = pos;
+    let imageElems = imagesWrapperElem.getElementsByTagName("img");
 
-    copyImageAttributes(carouselImage, carouselThumbs.getElementsByTagName("img")[carouselPos.innerHTML])
-}
+    // Src and alt attributes of the current image is copied to the main image
+    imageMainElem.attributes.getNamedItem("src").value = imageElems[Number(posDataElem.innerHTML)].attributes.getNamedItem("src").value;
+    imageMainElem.attributes.getNamedItem("alt").value = imageElems[Number(posDataElem.innerHTML)].attributes.getNamedItem("alt").value;
 
-// Copies src and alt attributes from imgElem2 to imgElem1
-function copyImageAttributes(imgElem1, imgElem2) {
-    imgElem1.attributes.getNamedItem("src").value = imgElem2.attributes.getNamedItem("src").value;
-    imgElem1.attributes.getNamedItem("alt").value = imgElem2.attributes.getNamedItem("alt").value;
+    // Updates the current position label
+    posElem.innerHTML = (parseInt(posDataElem.innerHTML) + 1).toString() + " / " + count.toString();
 
-    
+    // Sets the class of the selected image to selected
+    for (let i = 0; i < count; i++) {
+        imageElems[i].classList.remove("carousel-current");
+    }
+    imageElems[Number(posDataElem.innerHTML)].classList.add("carousel-current");
 }
 // END OF CAROUSEL FUNCTIONS
