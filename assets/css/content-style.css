@@ -167,29 +167,6 @@
 
     text-shadow: 0 0 8px #000,0 0 8px #000;
 }
-
-/* Header carousel */
-.header-carousel {
-    position: inherit
-}
-.header-carousel .carousel-image {
-    width: 100%;
-    height: 100vh;
-    max-height: none;
-    object-fit: cover;
-}
-.header-carousel .carousel-display {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-
-    background-color: black;
-}
-.header-carousel .carousel-images {
-    display: none;
-}
-
 /* END GALLERY STYLES */
 
 /* CONTACT FORM STYLES */
