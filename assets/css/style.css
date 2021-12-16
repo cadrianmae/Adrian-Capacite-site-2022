@@ -22,11 +22,9 @@ Deskop and mobile media queries
     --bg-secondary: #444;
     --text: #f4f4f4;
 
-    /* Light mode colours */
-    /* Unused for now */
-    --bg-light-primary: #f4f4f4;
-    --bg-light-secondary: #eee;
-    --light-text: #f4f4f4;
+    /* Success error colours */
+    --color-error: #d83333;
+    --color-success: #33d880;
 
     color: var(--text);
 }
@@ -94,16 +92,18 @@ h1, h2, h3, h4, h5, h6, p {
 
     /* display: none; */
     display: flex;
-    align-items: center;
     justify-content: center;
     opacity: 0;
 
     overflow-y: scroll;
 
-    transition: all .5s;
+    transition-property: top, opacity;
+    transition-duration: .5s;
 
     width: 100%;
     height: 100vh;
+    padding: .5rem;
+    padding-top: 4rem;
 
     background-color: var(--bg-primary);
     background-color: #0008;
@@ -118,6 +118,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     box-shadow: 0 0 16px #000;
     border-radius: 1em;
+    height: max-content;
     padding: 1em;
 
     background-color: var(--bg-secondary);
@@ -129,21 +130,76 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
+/* Modal button */
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 1rem;
+    height: 2rem;
+    width: 2rem;
+
+    cursor: pointer;
+}
+
+.modal-close:after, 
+.modal-close:before {
+    content: '';
+    
+    display: block;
+    
+    height: 5px;
+    border-radius: 3px;
+    margin: 7px 0;
+
+    background-color: var(--text);
+}
+.modal-close:before {
+    transform: translateY(6px) rotate(135deg);
+}
+.modal-close:after {
+    transform: translateY(-6px) rotate(-135deg);
+}
+.modal-close:hover:after, 
+.modal-close:hover:before {
+    background-color: var(--primary);
+}
+
+
 /* END MODAL STYLES */
 
 /* CONTACT FORM STYLE */
 .contact-form {
     font-size: 1rem;
 }
-.contact-form div {
+
+@media screen and (min-width: 798px) {
+    .contact-form {
+        width: max-content;
+    }
+}
+@media screen and (max-width: 798px) {
+    .contact-form {
+        width: 100%;
+    }
+} 
+
+
+.contact-form div.input {
     margin: .1em;
 }
-.contact-form div + div {
-    margin-top: 2em;
+.contact-form div.input + :is(div.input, div.submit) {
+    margin-top: 1em;
 }
-.contact-form p {
+.contact-form .input-label {
     margin: 0;
 }
+.contact-form .required .input-label::before {
+    content: '* ';
+    color: var(--color-error);
+}
+
 
 .contact-form :is(.text, .select, .textarea) :is(label, input, select, textarea) {
     display: block;
@@ -159,24 +215,56 @@ h1, h2, h3, h4, h5, h6, p {
 .contact-form textarea {
     resize: none;
 }
-.contact-form .input-group {
+.contact-form .input-options {
     box-shadow: 0 0 8px #000;
     border-radius: 1rem;
     padding: 1em;
 
     background-color: var(--bg-secondary);
-    
 }
+.contact-form .input-options>* {
+    padding: .5em;  
+}
+/* Submit button and message styles */
 .contact-form .submit {
     display: flex;
+    align-items: center;
     justify-content: right;
 }
+.contact-form .submit-output {
+    display: none;
+    margin: 1em;
+    border-radius: 1rem;
+    padding: .5em;
+
+    background-color: var(--bg-secondary);
+
+    font-size: 1em;
+}
+.contact-form .submit-output.success {
+    display: block;
+    
+    box-shadow: 0 0 8px var(--color-success);
+
+    background-color: var(--color-success);
+}
+.contact-form .submit-output.error{
+    display: block;
+    
+    box-shadow: 0 0 8px var(--color-error);
+
+    background-color: var(--color-error);
+}
 .contact-form .submit button {
-    background-color: #0000;
+    transition-property: background-color box-shadow;
+    transition-duration: .2s;
 
     border-style: none;
     border-radius: 1rem;
     padding: .5em;
+
+    background-color: #0000;
+    cursor: pointer;
 
     color: var(--text);
     font-size: 2em;
@@ -186,24 +274,37 @@ h1, h2, h3, h4, h5, h6, p {
     box-shadow: 0 0 16px 4px var(--primary);
 }
 
-.contact-form .field-empty :is(.input-group, input, select, textarea) {
-    box-shadow: 0 0 16px 8px #d83333 !important;
+/* Field error styles */
+.contact-form :is(.field-empty, .field-invalid-chars, .field-invalid-email)>
+:is(.input-options, input, select, textarea) {
+    box-shadow: 0 0 16px 8px var(--color-error);
 }
-.contact-form .field-empty ::before {
-    content: 'Field is required';
+.contact-form :is(.field-empty, .field-invalid-chars, .field-invalid-email) .input-label::after {
+    content: 'Error';
 
-    position: absolute;
+    width: max-content;
 
     display: block;
-    right: 0;
 
     border-radius: 1rem;
     padding: .5em;
 
-    background-color: #d83333;
+    background-color: var(--color-error);
 
-    font-size: 1em;
+    font-size: .75em;
 }
+/* Field error messages */
+.contact-form .field-empty .input-label::after {
+    content: 'Field must be filled';
+}
+.contact-form .field-invalid-chars .input-label::after {
+    content: 'Field cannot contain: < > ( ) [  ] \\ / . , ; : * @ \'double spaces\'';
+    
+}
+.contact-form .field-invalid-email .input-label::after {
+    content: 'Field must contain a valid email';
+}
+
 /* END CONTACT FORM STYLE */
 
 body {
@@ -261,7 +362,6 @@ nav ul {
 .nav-toggle {
     position: absolute;
     top: 0;
-    right: 0;
     right: 0;
 
     margin: 1rem;
