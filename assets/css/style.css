@@ -34,21 +34,185 @@ Deskop and mobile media queries
 * {
     box-sizing: border-box;
 }
+
+/* TEXT STYLES */
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0 16px;
+}
+.font-size-1 {
+    font-size: 1rem;
+}
+.font-size-1-5 {
+    font-size: 1.5rem;
+}
+.font-size-2 {
+    font-size: 2rem;
+}
+/* END TEXT STYLES */
+
+/* UTILITY STYLES */
 .constrain-width {
     margin: auto;
     max-width: 1200px;
     padding-left: 1rem;
     padding-right: 1rem;
 }
+.no-scroll {
+    overflow: hidden;
+}
+.display-none {
+    display: none;
+}
+.viewport-height {
+    height: 100vh;
+}
+.viewport-height-1-3 {
+    height: 33.33vh;
+}   
 
-/* Body styles */
+.margin-0 {
+    margin: 0;
+}
+
+/* Flex utility styles */
+.flex-center-top {
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    display: flex;
+}
+/* END UTILITY STYLES */
+
+
+
+/* MODAL STYLES */
+.modal-container {
+    position: fixed;
+    top: -100vh;
+    z-index: 10;
+
+    /* display: none; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    overflow-y: scroll;
+
+    transition: all .5s;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: var(--bg-primary);
+    background-color: #0008;
+}
+.modal-open {
+    display: flex;
+    opacity: 1;
+
+    top: 0;
+}
+.modal-content {
+
+    box-shadow: 0 0 16px #000;
+    border-radius: 1em;
+    padding: 1em;
+
+    background-color: var(--bg-secondary);
+    background-color: #4448;
+    backdrop-filter: blur(16px);
+
+}
+.modal-content :is(h1, h2, p) {
+    padding: 0;
+}
+
+/* END MODAL STYLES */
+
+/* CONTACT FORM STYLE */
+.contact-form {
+    font-size: 1rem;
+}
+.contact-form div {
+    margin: .1em;
+}
+.contact-form div + div {
+    margin-top: 2em;
+}
+.contact-form p {
+    margin: 0;
+}
+
+.contact-form :is(.text, .select, .textarea) :is(label, input, select, textarea) {
+    display: block;
+    width: 100%;
+}
+.contact-form :is(.text, .select, .textarea) :is(input, select, textarea) {
+    box-shadow: 0 0 8px #000;
+    border-radius: 1rem;
+    padding: .5em;
+
+    font-size: 1em;
+}
+.contact-form textarea {
+    resize: none;
+}
+.contact-form .input-group {
+    box-shadow: 0 0 8px #000;
+    border-radius: 1rem;
+    padding: 1em;
+
+    background-color: var(--bg-secondary);
+    
+}
+.contact-form .submit {
+    display: flex;
+    justify-content: right;
+}
+.contact-form .submit button {
+    background-color: #0000;
+
+    border-style: none;
+    border-radius: 1rem;
+    padding: .5em;
+
+    color: var(--text);
+    font-size: 2em;
+}
+.contact-form .submit button:hover {
+    background-color: var(--primary);
+    box-shadow: 0 0 16px 4px var(--primary);
+}
+
+.contact-form .field-empty :is(.input-group, input, select, textarea) {
+    box-shadow: 0 0 16px 8px #d83333 !important;
+}
+.contact-form .field-empty ::before {
+    content: 'Field is required';
+
+    position: absolute;
+
+    display: block;
+    right: 0;
+
+    border-radius: 1rem;
+    padding: .5em;
+
+    background-color: #d83333;
+
+    font-size: 1em;
+}
+/* END CONTACT FORM STYLE */
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-primary);
 }
 
-/* Nav styles */
+/* NAV STYLES */
 nav {
     position: fixed;
     top: 0;
@@ -212,8 +376,9 @@ nav a:hover img {
         display: list-item;
     }
 }
+/* END NAV STYLES */
 
-/* Header styles */
+/* HEADER STYLES */
 .header-background {
     position: absolute;
     z-index: -100;
@@ -260,6 +425,8 @@ header {
     }
     
 }
+/* END HEADER STYLES */
+
 
 /* Main Style */
 main {
@@ -275,7 +442,7 @@ footer {
     min-height: 33vh;
 }
 
-/* Scroll bar style */
+/* SCROLLBAR STYLES */
 * {
     scrollbar-width: thin;
     scrollbar-color: #444 #0000;
@@ -298,33 +465,5 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #aaa;
 }
+/* END SCROLLBAR STYLES */
 
-
-/* Text styles */
-h1, h2, h3, h4, h5, h6, p {
-    padding: 0 16px;
-}
-
-/* Utility styles */
-.display-none {
-    display: none;
-}
-.viewport-height {
-    height: 100vh;
-}
-.viewport-height-1-3 {
-    height: 33.33vh;
-}   
-
-.margin-0 {
-    margin: 0;
-}
-
-/* Flex utility styles */
-.flex-center-top {
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-
-    display: flex;
-}

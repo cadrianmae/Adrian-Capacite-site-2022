@@ -102,3 +102,20 @@ function carouselUpdate(elem) {
     imageElems[Number(posDataElem.innerHTML)].classList.add("carousel-current");
 }
 // END OF CAROUSEL FUNCTIONS
+
+// FORM VALIDATION
+// Open modal contacts form
+function toggleContactModal() {
+    let elem = document.getElementById("contact-modal");
+    let body = document.getElementsByTagName("body")[0];
+    elem.classList.toggle("modal-open");
+    if (elem.classList.contains("modal-open")) {
+        body.classList.add("no-scroll");
+    } else {
+        
+        body.classList.remove("no-scroll");
+    }
+}
+function validateForm() {
+    return false;
+}

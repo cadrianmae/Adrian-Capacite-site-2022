@@ -179,3 +179,11 @@
 }
 
 /* END GALLERY STYLES */
+
+/* CONTACT FORM STYLES */
+#modal-contact {
+    position: fixed;
+    top:0 ;
+
+    background: var(--bg-secondary);
+}

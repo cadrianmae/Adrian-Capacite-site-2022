@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/content-style.css">
 </head>
-<body>
+<body class="">
     <nav id="primary-nav">
         <ul class="constrain-width">
             <li id="nav-logo"><a href="index.html"><img src="assets/images/Logo/AC-White-x64.png" alt="Logo"></a></li>
@@ -22,7 +22,7 @@
             <li class="nav-link"><a href="photography.html">Photography</a></li>
             <li class="nav-link"><a href="software-web-dev-project.html">Web Project</a></li>
             <li class="nav-link"><a href="about.html">About</a></li>
-            <li class="nav-link"><a href="#">Contact</a></li>
+            <li class="nav-link"><a href="#" onclick="toggleContactModal()">Contact</a></li>
         </ul>
         
         <div class="nav-toggle" onclick="toggleNav()">
@@ -143,6 +143,48 @@
         <p>Adrian Capacite &copy; 2021</p>
     </footer>
 
+    <section id="contact-modal" class="modal-container">
+        <div class="modal-content contact-form">
+            <h2 class="font-size-2">Contact me</h2>
+            <form action="#" name="contact-form" onsubmit="return validateForm()">
+                <div class="input text required field-empty">
+                    <label for="name">Name</label><input type="text" id="name" name="name">
+                </div>
+                <div class="input text required">
+                    <label for="email">Email</label><input type="text" name="email" id="email">
+                </div>
+
+                <p>Reason of Contact</p>
+                <div class="input input-group radio required">
+                    <input type="radio" name="reason" id="enquiry"><label for="enquiry">Enquiry</label>
+                    <input type="radio" name="reason" id="suggestion"><label for="suggestion">Suggestion</label>
+                    <input type="radio" name="reason" id="issue"><label for="issue">Issue</label>
+                </div>
+
+                <p>Subject</p>
+                <div class="input input-group check required">
+                    <input type="checkbox" name="reason" id="photography"><label for="photography">Photography</label>
+                    <input type="checkbox" name="reason" id="software"><label for="software">Software</label>
+                    <input type="checkbox" name="reason" id="correspondence"><label for="correspondence">Correspondence</label>
+                </div>
+                <div class="input select field-empty">
+                    <label for="visitor-origin">How did you hear about me?</label>
+                    <select name="visitor-origin" id="visitor-origin">
+                        <option value="friend">A friend</option>
+                        <option value="search">On google</option>
+                        <option value="social-media">Social media</option>
+                    </select>
+                </div>
+                <div class="input textarea required ">
+                    <label for="message">Message</label><textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input submit">
+                    <button type="submit" value="submit">Submit</button>
+                </div>
+        </div>
+
+        </form>
+    </section>
     <script src="assets/scripts/scripts.js"></script>
 
     <!-- fontawesome.com script for icons -->
