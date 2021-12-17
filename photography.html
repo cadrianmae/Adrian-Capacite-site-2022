@@ -22,7 +22,7 @@
             <li class="nav-link"><a href="photography.html">Photography</a></li>
             <li class="nav-link"><a href="software-web-dev-project.html">Web Project</a></li>
             <li class="nav-link"><a href="about.html">About</a></li>
-            <li class="nav-link"><a href="#">Contact</a></li>
+            <li class="nav-link"><a href="#" onclick="openContactModal()">Contact</a></li>
         </ul>
         
         <div class="nav-toggle" onclick="toggleNav()">
@@ -47,26 +47,112 @@
     <!-- Main Content -->
     <main class="constrain-width">
         <section>
-            <h1>My name is Adrian Capacite</h1>
-            <p>
-                I am a Computer Science student at Technological University Dublin
-            </p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto nulla, corrupti maiores voluptatum voluptas, aspernatur vero sunt eum voluptatibus asperiores cupiditate molestiae libero modi quam! Recusandae laudantium excepturi voluptas quam.
-            </p>
+            <h2>Latest photos</h2>
+            <div id="expanding-wrapper-1" class="broken-grid expanding-wrapper" style="transition: all 2s;">
+                <div class="images">
+                    <img src="assets/images/galleries/latest/bray-beach-1.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/latest/bray-beach-2.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/latest/kilarney-waterfall.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/latest/newbridge-river-liffey-1.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/latest/newbridge-river-liffey-2.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/latest/sandymount-beach.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/latest/wet-road-at-dusk.jpg" alt="" loading="lazy">
+                </div>
+                <div class="gradient">
+                    <div class="more" onclick="toggleExpand('expanding-wrapper-1')">
+                        <div class="div-icon icon-arrow-down">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
-        <!-- TODO: Gallary grid -->
-        <section class="gallary-grid">
-
+        <section>
+            <h2>Bray air show</h2>
+            <div id="expanding-wrapper-2" class="broken-grid expanding-wrapper" style="transition: all 2s;">
+                <div class="images">
+                    <img src="assets/images/galleries/bray-air-show/airshow-flat-spin-plane.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/bray-air-show" alt="" loading="lazy">
+                    <img src="assets/images/galleries/bray-air-show/airshow-four-rolling-planes.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/bray-air-show/airshow-inverted-plane.jpg" alt="" loading="lazy">
+                    <img src="assets/images/galleries/bray-air-show/airshow-three-planes.jpg" alt="" loading="lazy">
+                </div>
+                <div class="gradient">
+                    <div class="more" onclick="toggleExpand('expanding-wrapper-2')">
+                        <div class="div-icon icon-arrow-down">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+    
     </main>
     <!-- Main Content End -->
 
     <footer class="constrain-width">
         <p>Adrian Capacite &copy; 2021</p>
     </footer>
+
+    
+    <!-- Contact modal -->
+    <section id="contact-modal" class="modal-container">
+        <div class="modal-content contact-form">
+            <div class="modal-close div-icon icon-x" onclick="closeContactModal()">
+                <div></div>
+            </div>
+
+            <h2 class="font-size-2">Contact me</h2>
+            <form action="#"  name="contact-form" id="contact-form" onsubmit="return validateForm(this)">
+                <div class="input text required">
+                    <label for="name" class="input-label">Name</label><input type="text" id="name" name="name">
+                </div>
+                
+                <div class="input text required">
+                    <label for="email" class="input-label">Email</label><input type="text" name="email" id="email">
+                </div>
+
+                <div class="input input-group radio required">
+                    <span class="input-label">Reason of contact</span>
+                    <div class="input-options">
+                        <input type="radio" name="reason" id="enquiry"><label for="enquiry">Enquiry</label>
+                        <input type="radio" name="reason" id="suggestion"><label for="suggestion">Suggestion</label>
+                        <input type="radio" name="reason" id="issue"><label for="issue">Issue</label>
+                    </div>
+                </div>
+
+                <div class="input input-group check required">
+                    <span class="input-label">Subject</span>
+                    <div class="input-options">
+                        <input type="checkbox" name="subject" id="photography"><label for="photography">Photography</label>
+                        <input type="checkbox" name="subject" id="software"><label for="software">Software</label>
+                        <input type="checkbox" name="subject" id="correspondence"><label for="correspondence">Correspondence</label>
+                    </div>
+                </div>
+                <div class="input select">
+                    <label for="visitor-origin" class="input-label">How did you hear about me?</label>
+                    <select name="visitor-origin" id="visitor-origin">
+                        <option value=""></option>
+                        <option value="friend">A friend</option>
+                        <option value="search">On google</option>
+                        <option value="social-media">Social media</option>
+                    </select>
+                </div>
+                <div class="input textarea required ">
+                    <label for="message" class="input-label">Message</label><textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="submit">
+                    <p class="submit-output">Form submitted</p>
+                    <button type="submit" value="submit">Submit</button>
+                </div>
+        </div>
+
+        </form>
+    </section>
+    <!-- End contact modal -->
 
     <script src="assets/scripts/scripts.js"></script>
     <script src="https://kit.fontawesome.com/87e2e714ed.js" crossorigin="anonymous"></script>

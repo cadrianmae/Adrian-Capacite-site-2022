@@ -208,3 +208,19 @@ function clearFormErrors(formName) {
         formInputWrappers[i].classList.remove("field-empty", "field-invalid-chars", "field-invalid-email");
     }
 }
+
+// END FORM VALIDATION 
+
+// WRAPPER EXPAND COLLAPSED - FUNCTION 4
+function toggleExpand(id) {
+    wrapper = document.getElementById(id);
+    wrapper.classList.toggle("expanded");
+    button = wrapper.getElementsByClassName("more")[0];
+    if (wrapper.classList.contains("expanded") == true) {
+        button.getElementsByClassName("div-icon")[0].classList.remove("icon-arrow-down");
+        button.getElementsByClassName("div-icon")[0].classList.add("icon-arrow-up");
+    } else { 
+        button.getElementsByClassName("div-icon")[0].classList.add("icon-arrow-down");
+        button.getElementsByClassName("div-icon")[0].classList.remove("icon-arrow-up");
+    }
+}

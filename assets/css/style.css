@@ -11,7 +11,7 @@ Deskop and mobile media queries
 /* Main style for website */
 
 :root {
-    font-size: 16px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 
     --primary: #D8338B;
@@ -21,6 +21,11 @@ Deskop and mobile media queries
     --bg-primary: #222;
     --bg-secondary: #444;
     --text: #f4f4f4;
+
+    /* Light mode colours */
+    --bg-light-primary: #f4f4f4;
+    --bg-light-secondary: #eee;
+    --light-text: #222;
 
     /* Success error colours */
     --color-error: #d83333;
@@ -37,6 +42,58 @@ Deskop and mobile media queries
 h1, h2, h3, h4, h5, h6, p {
     padding: 0 16px;
 }
+
+a.download-special {
+    display: inline-block;
+
+    transition-property: color, transform, box-shadow;
+    transition-duration: .2s;
+
+    margin: .5rem;
+    box-shadow: 0 0 8px #000;
+    border-radius: 1em;
+    padding: .5rem;
+
+    background-color: var(--primary);
+
+    color: var(--text);
+    text-decoration: none;
+}
+a.download-special:hover {
+    box-shadow: 0 0 16px 4px var(--primary);
+    transform: scale(105%);
+}
+a.link-social {
+    display: inline-block;
+
+    transition-property: color, transform, box-shadow, background-color;
+    transition-duration: .2s;
+
+    margin: .5rem;
+    border-radius: 2em;
+    height: 3rem;
+    width: 3rem;
+    padding: .5rem;
+
+    background-color: #0000;
+
+    font-size: 2rem;
+    color: var(--text);
+    text-decoration: none;
+}
+a.link-social:hover {
+    transform: scale(105%);
+
+    box-shadow: 0 0 16px var(--primary);
+
+    background-color: var(--primary);
+}
+
+.subtitle {
+    margin: 0;
+    color: #aaa;
+}
+
 .font-size-1 {
     font-size: 1rem;
 }
@@ -46,7 +103,12 @@ h1, h2, h3, h4, h5, h6, p {
 .font-size-2 {
     font-size: 2rem;
 }
+
+.text-col-2 {
+    columns: 2;
+}
 /* END TEXT STYLES */
+
 
 /* UTILITY STYLES */
 .constrain-width {
@@ -73,12 +135,32 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Flex utility styles */
+.flex-center-center {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+}
 .flex-center-top {
     justify-content: start;
     align-items: center;
-    flex-direction: column;
 
     display: flex;
+}
+.flex-column {
+    flex-flow: column;
+}
+.flex-row {
+    flex-flow: row;
+}
+.gap-1em {
+    gap: 1em;
+}
+
+.light-colors {
+    background-color: var(--bg-light-primary);
+    
+    color: var(--light-text);
 }
 /* END UTILITY STYLES */
 
@@ -143,24 +225,6 @@ h1, h2, h3, h4, h5, h6, p {
     cursor: pointer;
 }
 
-.modal-close:after, 
-.modal-close:before {
-    content: '';
-    
-    display: block;
-    
-    height: 5px;
-    border-radius: 3px;
-    margin: 7px 0;
-
-    background-color: var(--text);
-}
-.modal-close:before {
-    transform: translateY(6px) rotate(135deg);
-}
-.modal-close:after {
-    transform: translateY(-6px) rotate(-135deg);
-}
 .modal-close:hover:after, 
 .modal-close:hover:before {
     background-color: var(--primary);
@@ -428,7 +492,7 @@ nav a {
     border-radius: 1rem;
     padding: .5rem;
     
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #F4f4f4;
     text-decoration: none;
 }
@@ -529,7 +593,7 @@ header {
 #header-logo img {
     margin-top: 4rem;
 
-    max-height: 10em;
+    max-height:5em;
     max-width: 49%;
 }
 
@@ -558,11 +622,15 @@ header {
 
 /* Main Style */
 main {
+    padding: 1px;
     padding-top: 1px;
     
     border-radius: 1rem;
 
     background-color: var(--bg-primary);
+}
+main section {
+    padding: 1px;
 }
 
 /* Footer Style */

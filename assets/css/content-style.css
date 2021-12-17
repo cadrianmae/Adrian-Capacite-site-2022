@@ -8,17 +8,20 @@
 
 }
 .card>div {
+
+    overflow: hidden;
+
     transition-property: box-shadow, transform;
     transition: .2s ease-in-out;
     
-    margin: 1rem;
+    margin: .5rem;
     box-shadow: 0 0 8px 0 #000;
     border-radius: 1rem;
     box-sizing: border-box;
-    height: 600px;
     padding: .5rem;
 
     background-color: var(--bg-secondary);
+
 }
 .card>div:hover {
     box-shadow: 0 0 16px 0 #000;
@@ -31,9 +34,26 @@
     object-fit: cover;
 }
 .card a {
+    overflow: hidden;
+
     color: var(--text);
     text-decoration: none;
+
+    text-overflow: ellipsis;
 }
+.card h3 {
+    transition: color .2s;
+}
+.card a:hover h3 {
+    color: var(--primary);
+}
+.card p {
+    overflow: hidden;
+
+
+    text-overflow: ellipsis;
+}
+
 
 
 /* Scrolling card styles */
@@ -42,6 +62,9 @@
     flex-direction: row;
 
     overflow-x: scroll;
+}
+.scrolling-cards .card>div {
+    height: 600px;
 }
 @media screen and (min-width: 798px) {
     /* Desktop */
@@ -62,6 +85,9 @@
 /* Grid card styles  */
 .grid-cards {
     display: grid;
+}
+.grid-cards .card>div {
+    height: 600px;
 }
 @media screen and (min-width: 798px) {
     /* Desktop */
@@ -167,12 +193,147 @@
 
     text-shadow: 0 0 8px #000,0 0 8px #000;
 }
+
+/* Broken grid styles */
+.broken-grid {
+    position: relative;
+
+    overflow: hidden;
+    
+    margin: 1rem;
+    border-radius: 1rem;
+
+    box-shadow: 0 0 8px #000;
+    padding: 1rem;
+
+    background-color: #000;
+}
+.broken-grid .images {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+
+    display: flex;
+}
+.broken-grid .images img {
+    flex-grow: 1;
+    flex-shrink: 1;
+    object-fit: cover;
+
+    transition: transform .2s;
+
+    max-height: 300px;
+}
+.broken-grid img:hover {
+    transform: scale(102%);
+}
+.broken-grid .images :is(
+    :nth-last-child(1),
+    :nth-last-child(2),
+    ) {
+    flex-grow: 0;
+}
+.broken-grid .images :nth-last-child(1) {
+    margin-right: auto;
+}
+@media screen and (max-width: 798px) {
+    .broken-grid .images img {
+        width: 100%;
+        max-height: none;
+    }
+}
+
+.broken-grid .gradient {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: flex-end;
+
+    display: flex;
+
+    height: 128px;
+    width: 100%;
+
+    background-image: linear-gradient(#0000, #000f 90%);
+}
+.broken-grid .more {
+    transition: color .2s;
+
+    padding: 1rem;
+
+    cursor: pointer;
+}
+.broken-grid .more:hover {
+    --text: var(--primary);
+
+
+    padding: 1rem;
+
+    color: var(--primary);
+
+    cursor: pointer;
+}
 /* END GALLERY STYLES */
 
-/* CONTACT FORM STYLES */
-#modal-contact {
-    position: fixed;
-    top:0 ;
-
-    background: var(--bg-secondary);
+/* MENU ICON STYLES */
+/* default: hamburger */
+.div-icon {
+    margin: 1rem;
+    width: 2rem;
+    height: 2rem;
 }
+.div-icon div,
+.div-icon:before,
+.div-icon:after {
+    content: '';
+    
+    display: block;
+
+    transition: all .2s;
+    
+    height: 5px;
+    border-radius: 3px;
+    margin: 7px 0;
+
+    background-color: var(--text);
+    
+}
+/* X */
+.div-icon.icon-x div {
+    transform: scale(0);
+}
+.div-icon.icon-x:before {
+    transform: translateY(12px) rotate(135deg);
+}
+.div-icon.icon-x:after {
+    transform: translateY(-12px) rotate(-135deg);
+}
+/* arrow style */
+.div-icon:is(.icon-arrow-down,.icon-arrow-up)
+div {
+    transform: scale(0);
+}
+.div-icon:is(.icon-arrow-down,.icon-arrow-up):before {
+    transform: translateY(3px) rotate(135deg);
+}
+.div-icon:is(.icon-arrow-down,.icon-arrow-up):after {
+    transform: translateY(-3px) rotate(-135deg);
+}
+.div-icon.div-icon.icon-arrow-down {
+    transform: rotate(-90deg);
+}
+.div-icon.div-icon.icon-arrow-up {
+    transform: rotate(90deg);
+}
+/* END DIV ICON STYLES */
+
+/* WRAPPER COLLAPSE STYLES */
+.expanding-wrapper {
+    max-height: 512px;
+}
+.expanding-wrapper.expanded {
+    max-height: none;
+}
+
+/* END WRAPPER COLLAPSE STYLES */
