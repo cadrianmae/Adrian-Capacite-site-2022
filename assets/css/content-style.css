@@ -1,4 +1,4 @@
-/* Style for different content */
+/* Style for special content */
 
 
 /* CARD STYLES */
@@ -17,8 +17,7 @@
     box-shadow: 0 0 8px 0 #000;
     border-radius: 1rem;
     box-sizing: border-box;
-    height: max-content;
-    max-height: 600px;
+    height: 600px;
     padding: .5rem;
 
     background-color: var(--bg-secondary);
@@ -29,7 +28,7 @@
 }
 .card div:hover {
     box-shadow: 0 0 16px 0 #000;
-    transform: scale(102%);
+    transform: scale(1.02);
 }
 .card img {
     border-radius: 1rem;
@@ -227,12 +226,12 @@
     max-height: 300px;
 }
 .broken-grid img:hover {
-    transform: scale(102%);
+    transform: scale(1.02);
 }
 .broken-grid .images :is(
     :nth-last-child(1),
-    :nth-last-child(2),
-    ) {
+    :nth-last-child(2)
+) {
     flex-grow: 0;
 }
 .broken-grid .images :nth-last-child(1) {

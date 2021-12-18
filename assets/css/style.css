@@ -61,7 +61,7 @@ a.download-special {
 }
 a.download-special:hover {
     box-shadow: 0 0 16px 4px var(--primary);
-    transform: scale(105%);
+    transform: scale(1.05);
 }
 a.link-social {
     display: inline-block;
@@ -82,7 +82,7 @@ a.link-social {
     text-decoration: none;
 }
 a.link-social:hover {
-    transform: scale(105%);
+    transform: scale(1.05);
 
     box-shadow: 0 0 16px var(--primary);
 
@@ -108,8 +108,11 @@ a.link-social:hover {
     columns: 2;
 }
 
-.underline::after {
+.accent-line::after {
     content: '';
+
+    position: relative;
+    top: 10px;
 
     display: block;
 
@@ -122,7 +125,7 @@ a.link-social:hover {
     background-color: var(--primary);
 }
 @media screen and (min-width: 798px) {
-    .underline::after {
+    .accent-line::after {
         width: 33%;
     }
 }
@@ -357,7 +360,7 @@ li {
     background-color: var(--color-error);
 }
 .contact-form .submit button {
-    transition-property: background-color box-shadow;
+    transition-property: background-color, box-shadow;
     transition-duration: .2s;
 
     border-style: none;
@@ -415,6 +418,26 @@ body {
 }
 
 /* NAV STYLES */
+.breadcrumbs {
+    margin-bottom: .5em;
+
+    color: var(--text);
+}
+.breadcrumbs a {
+    display: inline-block;
+
+    width: auto;
+
+    color: var(--text);
+}
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+.breadcrumbs span {
+    display: inline-block;
+
+    width: auto;
+}
 nav {
     position: fixed;
     top: 0;

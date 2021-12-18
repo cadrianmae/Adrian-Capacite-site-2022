@@ -19,7 +19,6 @@ window.onscroll = function() {
     }
     lastScrollY = window.pageYOffset;
 }
-
 // END OF NAV FUNCTIONS
 
 // CAROUSEL FUNCTIONS - Functionality 2
