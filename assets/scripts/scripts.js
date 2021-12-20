@@ -29,7 +29,7 @@ function carouselGetProperties(elem) {
     let posDataElem = wrapperElem.getElementsByClassName("carousel-pos-data")[0];
     let posElem = wrapperElem.getElementsByClassName("carousel-pos")[0];
     let imageMainElem = wrapperElem.getElementsByClassName("carousel-image")[0];
-    let imagesWrapperElem = wrapperElem.getElementsByClassName("carousel-images-thumbs")[0]
+    let imagesWrapperElem = wrapperElem.getElementsByClassName("carousel-images-thumbs")[0];
     
     // Gets the size of the list of images
     let count = parseInt(imagesWrapperElem.childElementCount);
@@ -70,14 +70,14 @@ function carouselNext(elem) {
 function carouselSetTo(elem, pos) {
     let {posDataElem} = carouselGetProperties(elem);
     
-    posDataElem.innerHTML = pos
+    posDataElem.innerHTML = pos;
 
     carouselUpdate(elem);
 }
 
 // Updates the carousel with the new position
 function carouselUpdate(elem) {
-    let {posDataElem, posElem, imageMainElem, imagesWrapperElem, count} = carouselGetProperties(elem)
+    let {posDataElem, posElem, imageMainElem, imagesWrapperElem, count} = carouselGetProperties(elem);
     
     let imageElems = imagesWrapperElem.getElementsByTagName("img");
 
@@ -103,7 +103,7 @@ function openContactModal() {
     let body = document.getElementsByTagName("body")[0];
     elem.classList.add("modal-open");
     body.classList.add("no-scroll");
-    closeNav()
+    closeNav();
 }
 
 function closeContactModal() {

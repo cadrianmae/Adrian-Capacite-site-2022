@@ -108,6 +108,7 @@ a.link-social:hover {
     columns: 2;
 }
 
+
 .accent-line::after {
     content: '';
 
@@ -130,6 +131,25 @@ a.link-social:hover {
     }
 }
 /* END TEXT STYLES */
+section>img {
+    width: 100%;
+}
+section>div>img {
+    width: 100%;
+}
+/* IMAGE STYLES */
+.image-50 {
+    width: 50%;
+}
+.image-left {
+    float: left;
+}
+.image-right {
+    float: right;
+}
+
+/* END IMAGE STYLES */
+
 
 /* INFO LAYOUT STYLES */
 /* Table */
@@ -192,6 +212,9 @@ li {
 }
 .flex-row {
     flex-flow: row;
+}
+.flex-wrap {
+    flex-wrap: wrap;
 }
 .gap-1em {
     gap: 1em;
