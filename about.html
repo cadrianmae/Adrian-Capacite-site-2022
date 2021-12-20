@@ -1,0 +1,203 @@
+<!-- 
+    Web Development Project - software.html
+    Author: Adrian Thomas Capacite
+    Date: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Adrian Capacite</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/content-style.css">
+</head>
+<body>
+    <nav id="primary-nav">
+        <ul class="constrain-width">
+            <li id="nav-logo"><a href="index.html"><img src="assets/images/Logo/AC-White-x64.png" alt="Logo"></a></li>
+            <li class="nav-link"><a href="software.html">Software</a></li>
+            <li class="nav-link"><a href="photography.html">Photography</a></li>
+            <li class="nav-link"><a href="software-web-dev-project.html">Web Project</a></li>
+            <li class="nav-link"><a href="about.html">About</a></li>
+            <li class="nav-link"><a href="#" onclick="openContactModal()">Contact</a></li>
+        </ul>
+        
+        <div class="nav-toggle" onclick="toggleNav()">
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="header-background viewport-height">
+            <img src="assets/images/background/adrian-sillhouette.jpg" alt="Sillhouette of Adrian">
+            <div class="background-gradient"></div>
+    </div>
+    
+    <header class="viewport-height-1-3 flex-center-top">
+        <div id="header-logo">
+            <img src="assets/images/Logo/Adrian-white-x256.png" alt="logo">
+            <img src="assets/images/Logo/Capacite-white-x256.png" alt="logo">
+        </div>
+        <h1 class="margin-0">A b o u t</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="constrain-width">
+        <div class="flex-center-center flex-row flex-wrap gap-1em">
+            <a href="assets/documents/Adrian-Capacite-CV.pdf" class="download-special" download>Download CV</a>
+            <a href="https://www.linkedin.com/in/adrian-thomas-capacite-1b17351b9/" class="link-social"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/AdrianCapacite" class="link-social"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/adriancapacite/" class="link-social"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/AdrianCapacite/" class="link-social"><i class="fab fa-twitter"></i></a>
+        </div>
+        <section>
+            <h2>About me</h2>
+            <p>
+                I am a software developer, web developer and photographer. Based in Dublin, Ireland
+            </p>
+        </section>
+        <section class="card">
+            <div>
+                <h2 class="accent-line">Skills</h2>
+                <ul class="text-col-2">
+                    <li>IT skills</li>
+                    <li>Quick learner</li>
+                    <li>Work foucsed</li>
+                    <li>Self-starter</li>
+                    <li>Problem-solving</li>
+                </ul>
+            </div>
+        </section>
+        <section class="card">
+            <div>
+                <h2 class="accent-line">Languages & Tools</h2>
+                <table>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Expereince / year</th>
+                        <th>Tool</th>
+                        <th>Expereince / year</th>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Proficient 2-years</td>
+                        <td>Adobe Lightroom</td>
+                        <td>Proficient - 3-years+</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Proficient 2-years</td>
+                        <td>Adobe Premier Pro</td>
+                        <td>Proficient - 4-years+</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Novice 2-years</td>
+                        <td>Adobe Photoshop</td>
+                        <td>Novice 3-years+</td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td>Novice 2-years</td>
+                        <td>Adobe Illustrator</td>
+                        <td>Proficient 3-years+</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>Novice 3-years</td>
+                        <td>Adobe Dreamweaver</td>
+                        <td>Novice 2-years+</td>
+                    </tr>
+                    <tr>
+                        <td>VB Basic</td>
+                        <td>Novice 2-years</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="card">
+            <div>
+                <h2 class="accent-line">Experience</h2>
+                <h3>General assistant</h3>
+                <p class="subtitle">Eoin Finnegan, remote working - Oct 2019 - August 2020</p>
+                <ul>
+                    <li>Assist a freelance marketing consultant & editor</li>
+                    <li>Customer service through phone and email</li>
+                    <li>Finding & communicating with new business leads</li>
+                    <li>Document formatting & editing</li>
+                    <li>Graphic design work when required</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- Main Content End -->
+
+    <footer class="constrain-width">
+        <p>Adrian Capacite &copy; 2021</p>
+    </footer>
+
+    <!-- Contact modal -->
+    <section id="contact-modal" class="modal-container">
+        <div class="modal-content contact-form">
+            <div class="modal-close div-icon icon-x" onclick="closeContactModal()">
+                <div></div>
+            </div>
+
+            <h2 class="font-size-2">Contact me</h2>
+            <form action="#"  name="contact-form" id="contact-form" onsubmit="return validateForm(this)">
+                <div class="input text required">
+                    <label for="name" class="input-label">Name</label><input type="text" id="name" name="name">
+                </div>
+                
+                <div class="input text required">
+                    <label for="email" class="input-label">Email</label><input type="text" name="email" id="email">
+                </div>
+
+                <div class="input input-group radio required">
+                    <span class="input-label">Reason of contact</span>
+                    <div class="input-options">
+                        <input type="radio" name="reason" id="enquiry"><label for="enquiry">Enquiry</label>
+                        <input type="radio" name="reason" id="suggestion"><label for="suggestion">Suggestion</label>
+                        <input type="radio" name="reason" id="issue"><label for="issue">Issue</label>
+                    </div>
+                </div>
+
+                <div class="input input-group check required">
+                    <span class="input-label">Subject</span>
+                    <div class="input-options">
+                        <input type="checkbox" name="subject" id="photography"><label for="photography">Photography</label>
+                        <input type="checkbox" name="subject" id="software"><label for="software">Software</label>
+                        <input type="checkbox" name="subject" id="correspondence"><label for="correspondence">Correspondence</label>
+                    </div>
+                </div>
+                <div class="input select">
+                    <label for="visitor-origin" class="input-label">How did you hear about me?</label>
+                    <select name="visitor-origin" id="visitor-origin">
+                        <option value="">N/A</option>
+                        <option value="friend">A friend</option>
+                        <option value="search">On google</option>
+                        <option value="social-media">Social media</option>
+                    </select>
+                </div>
+                <div class="input textarea required ">
+                    <label for="message" class="input-label">Message</label><textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="submit">
+                    <p class="submit-output">Form submitted</p>
+                    <button type="submit" value="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <!-- End contact modal -->
+
+    <script src="assets/scripts/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/87e2e714ed.js" crossorigin="anonymous"></script>
+</body>
+</html>

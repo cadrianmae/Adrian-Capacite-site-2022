@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/content-style.css">
 </head>
-<body>
+<body class="">
     <nav id="primary-nav">
         <ul class="constrain-width">
             <li id="nav-logo"><a href="index.html"><img src="assets/images/Logo/AC-White-x64.png" alt="Logo"></a></li>
@@ -22,7 +22,7 @@
             <li class="nav-link"><a href="photography.html">Photography</a></li>
             <li class="nav-link"><a href="software-web-dev-project.html">Web Project</a></li>
             <li class="nav-link"><a href="about.html">About</a></li>
-            <li class="nav-link"><a href="#">Contact</a></li>
+            <li class="nav-link"><a href="#" onclick="openContactModal()">Contact</a></li>
         </ul>
         
         <div class="nav-toggle" onclick="toggleNav()">
@@ -30,7 +30,10 @@
         </div>
     </nav>
     
-    <img src="assets/images/background/adrian-sillhouette.jpg" alt="" class="header-background">
+    <div class="header-background viewport-height">
+            <img src="assets/images/background/adrian-sillhouette.jpg" alt="Sillhouette of Adrian">
+            <div class="background-gradient"></div>
+    </div>
     
     <header class="viewport-height">
         <div id="home-header-logo">
@@ -44,94 +47,72 @@
         <section>
             <h1>My name is Adrian Capacite</h1>
             <p>
-                I am a Computer Science student at Technological University Dublin
+                I'm a software developer, web developer and photographer. Based in Dublin, Ireland
             </p>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto nulla, corrupti maiores voluptatum voluptas, aspernatur vero sunt eum voluptatibus asperiores cupiditate molestiae libero modi quam! Recusandae laudantium excepturi voluptas quam.
+                I'm currently studying my BSc in Computer Science at Technological University Dublin.
             </p>
+            <p>
+                My top 3 computer languages are:
+            </p>
+            <ol>
+                <li>Java</li>
+                <li>C</li>
+                <li>HTML and CSS <small>Yes, they're two separate languages but they work with eachother</small></li>
+            </ol>
         </section>
 
         <section>
             <h2>Latest Articles</h2>
 
             <div class="scrolling-cards">
-
                 <article class="card">
                     <div>
-                        <a href="">
-                            <img src="https://picsum.photos/300/400?random=1" alt="" loading="lazy">
-                            <h3>Article 1</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus aspernatur porro, dicta, a officiis fugiat vitae corporis illum adipisci aliquid at consectetur asperiores totam doloribus? Officiis rem nam soluta unde.</p>
+                        <a href="software-web-dev-project.html">
+                            <img src="assets/images/background/html-web-development.jpg" alt="HTML code and website" loading="lazy">
+                            <h3>Web Development Project Report</h3>
+                            <p>The website will serve as an interactive hub for learning, research and career information about the present writer. The website will provide content such as a portfolio for work such as software development and photography, blog articles, links to social media profiles such as GitHub, Twitter, Instagram etc…, a means to quickly contact the present writer and an online Curriculum Vitae.</p>
                         </a>
                     </div>
                 </article>
 
                 <article class="card">
                     <div>
-                        <a href="">
-                            <img src="https://picsum.photos/300/400?random=2" alt="" loading="lazy">
-                            <h3>Article 2</h3>
-                            <p>lorem</p>
+                        <a href="software-my-uni-experience.html">
+                            <img src="assets/images/background/Central-Quad-cgi-view-from-Academic-Plaza_small.jpg" alt="Central Quad cgi view from Academic Plaza" loading="lazy">
+                            <h3>My Uni Experience</h3>
+                            <p>Before I started university, I was doing my QQI Level 5 course in Software Development in Dun Laoghaire Further Education. In the course I did subjects such as Database Methods, Software Architecture, Web Authoring, Program and Design Principals, Work Experience, Communications, Maths and Networking. I was delighted to graduated the course with straight distinctions. Afterwards, I took up a few jobs during the summer to save up money to pay for my tuition and rent for when I move out.</p>
                         </a>
                     </div>
                 </article>
-
-                <article class="card">
-                    <div>
-                        <a href="">
-                            <img src="https://picsum.photos/300/400?random=3" alt="" loading="lazy">
-                            <h3>Article 3</h3>
-                            <p>lorem</p>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <a href="">
-                            <img src="https://picsum.photos/300/400?random=4" alt="" loading="lazy">
-                            <h3>Article 4</h3>
-                            <p>lorem</p>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div>
-                        <a href="">
-                            <img src="https://picsum.photos/300/400?random=5" alt="" loading="lazy">
-                            <h3>Article 5</h3>
-                            <p>lorem</p>
-                        </a>
-                    </div>
-                </article>
-                
             </div>
         </section>
 
         <section>
             <h2>Latest Photos</h2>
-            <div class="gallery-carousel">
-                <div class="carousel">
-                    <a class="carousel-button carousel-prev" onclick="carouselPrev(this)">
+            <div class="carousel">
+                <div class="carousel-display">
+                    <a class="carousel-prev" onclick="carouselPrev(this)">
                         <i class="fas fa-chevron-left"></i>
                     </a>
-                    <a class="carousel-button carousel-next" onclick="carouselNext(this)">
-                    <i class="fas fa-chevron-right"></i>
+                    <a class="carousel-next" onclick="carouselNext(this)">
+                        <i class="fas fa-chevron-right"></i>
                     </a>
     
-                    <span class="carousel-position">0</span>
-    
-                    <img class="carousel-image" src="https://picsum.photos/400/300?random=6" alt="placeholder" loading="lazy">
-    
+                    <div class="carousel-pos-data">0</div>
+                    <div class="carousel-pos">1 / 7</div>
+                    
+                    <img class="carousel-image" src="assets/images/galleries/latest/bray-beach-1.jpg" alt="Bray beach" loading="lazy">
                 </div>
     
-                <div class="carousel-thumbs">
-                    <img src="https://picsum.photos/400/300?random=6" alt="placeholder" loading="lazy" onclick="carouselDisplay(this, 0)">
-                    <img src="https://picsum.photos/400/300?random=7" alt="placeholder" loading="lazy" onclick="carouselDisplay(this, 1)">
-                    <img src="https://picsum.photos/400/300?random=8" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 2)">
-                    <img src="https://picsum.photos/400/300?random=9" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 3)">
-                    <img src="https://picsum.photos/400/300?random=10" alt="placeholder" loading="lazy"onclick="carouselDisplay(this, 4)">
+                <div class="carousel-images-thumbs">
+                    <img src="assets/images/galleries/latest/bray-beach-1.jpg" alt="Bray beach" loading="lazy" onclick="carouselSetTo(this, 0)">
+                    <img src="assets/images/galleries/latest/bray-beach-2.jpg" alt="Bray beach" loading="lazy" onclick="carouselSetTo(this, 1)">
+                    <img src="assets/images/galleries/latest/kilarney-waterfall.jpg" alt="Waterfall at kilarney" loading="lazy" onclick="carouselSetTo(this, 2)">
+                    <img src="assets/images/galleries/latest/newbridge-river-liffey-1.jpg" alt="River Liffey at Newbridge" loading="lazy" onclick="carouselSetTo(this, 3)">
+                    <img src="assets/images/galleries/latest/newbridge-river-liffey-2.jpg" alt="River Liffey at Newbridge" loading="lazy" onclick="carouselSetTo(this, 4)">
+                    <img src="assets/images/galleries/latest/sandymount-beach.jpg" alt="Sandymount Beach" loading="lazy" onclick="carouselSetTo(this, 5)">
+                    <img src="assets/images/galleries/latest/wet-road-at-dusk.jpg" alt="Wet road at dusk" loading="lazy" onclick="carouselSetTo(this, 6)">
                 </div>
             </div>
         </section>
@@ -141,6 +122,63 @@
     <footer class="constrain-width">
         <p>Adrian Capacite &copy; 2021</p>
     </footer>
+
+    <!-- Contact modal -->
+    <section id="contact-modal" class="modal-container">
+        <div class="modal-content contact-form">
+            <div class="modal-close div-icon icon-x" onclick="closeContactModal()">
+                <div></div>
+            </div>
+
+            <h2 class="font-size-2">Contact me</h2>
+            <form action="#"  name="contact-form" id="contact-form" onsubmit="return validateForm(this)">
+                <div class="input text required">
+                    <label for="name" class="input-label">Name</label><input type="text" id="name" name="name">
+                </div>
+                
+                <div class="input text required">
+                    <label for="email" class="input-label">Email</label><input type="text" name="email" id="email">
+                </div>
+
+                <div class="input input-group radio required">
+                    <span class="input-label">Reason of contact</span>
+                    <div class="input-options">
+                        <input type="radio" name="reason" id="enquiry"><label for="enquiry">Enquiry</label>
+                        <input type="radio" name="reason" id="suggestion"><label for="suggestion">Suggestion</label>
+                        <input type="radio" name="reason" id="issue"><label for="issue">Issue</label>
+                    </div>
+                </div>
+
+                <div class="input input-group check required">
+                    <span class="input-label">Subject</span>
+                    <div class="input-options">
+                        <input type="checkbox" name="subject" id="photography"><label for="photography">Photography</label>
+                        <input type="checkbox" name="subject" id="software"><label for="software">Software</label>
+                        <input type="checkbox" name="subject" id="correspondence"><label for="correspondence">Correspondence</label>
+                    </div>
+                </div>
+                <div class="input select">
+                    <label for="visitor-origin" class="input-label">How did you hear about me?</label>
+                    <select name="visitor-origin" id="visitor-origin">
+                        <option value="">N/A</option>
+                        <option value="friend">A friend</option>
+                        <option value="search">On google</option>
+                        <option value="social-media">Social media</option>
+                    </select>
+                </div>
+                <div class="input textarea required ">
+                    <label for="message" class="input-label">Message</label><textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="submit">
+                    <p class="submit-output">Form submitted</p>
+                    <button type="submit" value="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <!-- End contact modal -->
 
     <script src="assets/scripts/scripts.js"></script>
 
