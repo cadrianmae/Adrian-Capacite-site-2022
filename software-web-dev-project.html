@@ -1,11 +1,19 @@
-<!-- 
+<!--
     Web Development Project - software.html
     Author: Adrian Thomas Capacite
-    Date: 
+    Date:
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P236LWH');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +23,11 @@
     <link rel="stylesheet" href="assets/css/content-style.css">
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P236LWH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <nav id="primary-nav">
         <ul class="constrain-width">
             <li id="nav-logo"><a href="index.html"><img src="assets/images/logo/AC-White-x64.png" alt="Logo"></a></li>
@@ -24,7 +37,7 @@
             <li class="nav-link"><a href="about.html">About</a></li>
             <li class="nav-link"><a href="#" onclick="openContactModal()">Contact</a></li>
         </ul>
-        
+
         <div class="nav-toggle" onclick="toggleNav()">
             <div></div>
         </div>
@@ -34,7 +47,7 @@
             <img src="assets/images/background/html-web-development.jpg" alt="HTML code and website">
             <div class="background-gradient"></div>
     </div>
-    
+
     <header class="viewport-height-1-3 flex-center-top">
         <div id="header-logo">
             <img src="assets/images/logo/Adrian-white-x256.png" alt="logo">
@@ -89,7 +102,7 @@
                 <h3>Fourth function</h3>
                 <p>The fourth JS functionality controls elements which can expand and collapse. The script toggle a class tag on the element which tell the element whether to be expanded or collapsed.</p>
                 <h2>Low Fidelity Prototype</h2>
-                
+
                 <div class="carousel">
                     <div class="carousel-display">
                         <a class="carousel-prev" onclick="carouselPrev(this)">
@@ -98,15 +111,15 @@
                         <a class="carousel-next" onclick="carouselNext(this)">
                             <i class="fas fa-chevron-right"></i>
                         </a>
-        
+
                         <div class="carousel-pos-data">0</div>
                         <div class="carousel-pos">1 / 7</div>
-                        
+
                         <img class="carousel-image" src="assets/images/article-images/Wireframes/Home-Header.png" alt="Homepage header" loading="lazy">
                     </div>
-        
+
                     <div class="carousel-images-thumbs">
-                        
+
                         <img src="assets/images/article-images/Wireframes/Home-Header.png" alt="Homepage header" loading="lazy" onclick="carouselSetTo(this, 0)">
                         <img src="assets/images/article-images/Wireframes/Home.png" alt="Homepage content" loading="lazy" onclick="carouselSetTo(this, 1)">
                         <img src="assets/images/article-images/Wireframes/Home-Footer.png" alt="Homepage footer" loading="lazy" onclick="carouselSetTo(this, 2)">
@@ -201,7 +214,7 @@
                 <li>Help users recognize, diagnose, and recover from errors</li>
                 <li>Help and documentation</li>
             </ol>
-            
+
             <h2>Appendix</h2>
             <h3>Weekly Logs</h3>
             <h4>Week 1 - 11 / 11 / 21</h4>
@@ -213,23 +226,23 @@
             </ol>
 
             <p>I will be going for the last option, a website about SpaceX, a space rocket company, the achievements, their aspirations and services</p>
-            
+
             <h4>Week 2 - 18 / 11 / 21</h4>
             <p>This is the second week developing my project website. I have decided to change my ideas for my website to be my personal website. </p>
             <p>Here in my website, it will contain an introduction of myself, a blog page, a portfolio of my work and hobbies such as photography and software development and an online CV with a means to reach me.</p>
             <p>I will be developing my website using HTML 5, CSS 3 and JavaScript. I will be developing my website in Visual Studio Code.</p>
             <p>My website layout will be created primarily using the CSS grids display property.</p>
-            
+
             <h4>Week 3 - 25 / 11 / 21</h4>
             <p>This is the third week of developing my project website. I have begun brainstorming and planning the content that will be included on the website. At the same time, I have also made some research on sites like my website which were software development and photography portfolio websites.</p>
             <p>I have also begun to write up the report for the website.</p>
-           
+
             <h4>Week 4 - 2/ 12 / 21</h4>
             <p>This is the fourth week of developing my website. I have finalised research on sites like my website. Using a combination of inspiration and my own ideas I have written what web development tools I will use, how I will make my website responsive and how I will test my websites across different browsers, devices and screens. I have planned out the JavaScript functionality I will use on the website for example opening a mobile navigation menu. I have finished drawing up the wireframe of the website.</p>
-            
+
             <h4>Week 5 - 9/ 12 / 21</h4>
             <p>This is the fifth week of developing the website. I have begun implementing the website in HTML and CSS, the main structure of the homepage were implement and so as the styling.</p>
-            
+
             <h4>Week 6 - 18 / 12 / 21</h4>
             <p>This is the sixth and final week of developing the website. I have finished implementing the website, afterwards I performed testing on the site to see if the code is valid and the responsive design is working as intended. I have also finalised the report for the web development assignment and checked if all the tasks have been done according to the assignment brief.</p>
 
@@ -250,11 +263,11 @@
             </div>
 
             <h2 class="font-size-2">Contact me</h2>
-            <form action="#"  name="contact-form" id="contact-form" onsubmit="return validateForm(this)">
+            <form action="#"  name="contact-form" id="contact-form" onsubmit="validateForm(this)">
                 <div class="input text required">
                     <label for="name" class="input-label">Name</label><input type="text" id="name" name="name">
                 </div>
-                
+
                 <div class="input text required">
                     <label for="email" class="input-label">Email</label><input type="text" name="email" id="email">
                 </div>
